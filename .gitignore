@@ -1,0 +1,26 @@
+cat > .gitignore << 'EOF'
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# ESP-IDF / PlatformIO builds
+build/
+.pio/
+sdkconfig.old
+
+# ML artifacts and data (too big for Git)
+*.pt
+*.pth
+*.safetensors
+*.onnx
+*.bin
+datasets/
+runs/
+wandb/
+
+# Media and logs
+*.mp4
+*.wav
+logs/
+EOF
