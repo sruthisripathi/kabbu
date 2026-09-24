@@ -1,0 +1,6 @@
+{
+  "rooms": ["hall", "kitchen", "bedroom", "balcony", "terrace"],
+  "home": "hall",
+  "clips": ["dinner_ready", "reminder_call", "bring_clothes_in", "need_water", "come_here"],
+  "recordings": ["msg_1"]
+}

@@ -1,0 +1,33 @@
+// Kabbu skill language v1
+// Example: AT(17:00) { GOTO(bedroom); SAY(reminder_call); RETURN() }
+
+?start: program
+
+program: statement (";" statement)* ";"?
+
+?statement: goto
+          | visit_all
+          | say
+          | play
+          | at
+          | wait
+          | ret
+          | emote
+
+goto: "GOTO" "(" NAME ")"
+visit_all: "VISIT_ALL" "(" ")" block
+say: "SAY" "(" NAME ")"
+play: "PLAY" "(" NAME ")"
+at: "AT" "(" TIME ")" block
+wait: "WAIT" "(" INT ")"
+ret: "RETURN" "(" ")"
+emote: "EMOTE" "(" NAME ")"
+
+block: "{" program "}"
+
+TIME: /([01][0-9]|2[0-3]):[0-5][0-9]/
+NAME: /[a-z][a-z0-9_]*/
+
+%import common.INT
+%import common.WS
+%ignore WS
